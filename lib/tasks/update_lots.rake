@@ -6,7 +6,7 @@ task :update_lots => :environment do
   photos =  vk.photos.get(gid: '20651541', aid: men_aid)
   photos += vk.photos.get(gid: '20651541', aid: women_aid)
   photos.each do |photo|
-    Lot.where(pid: photo.pid).first_or_create do |lot|
+    Lot.where(pid: photo.pid.to_s).first_or_create do |lot|
       lot.stage = stage
       lot.male = (photo.aid.to_s == men_aid)
       lot.photo = photo.src
