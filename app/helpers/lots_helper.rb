@@ -7,7 +7,7 @@ module LotsHelper
       names.each_with_index do |name, i|
         link_tos << link_to(name, links[i], target: '_blank')
       end
-      raw link_tos.join(', ')
+      raw link_tos.join('<br>')
     else
       link_to lot.name, lot.link, target: '_blank'
     end
