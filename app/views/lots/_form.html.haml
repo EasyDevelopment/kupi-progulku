@@ -1,0 +1,28 @@
+= form_for @lot do |f|
+  - if @lot.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@lot.errors.count, "error")} prohibited this lot from being saved:"
+      %ul
+        - @lot.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :pid
+    = f.text_field :pid
+  .field
+    = f.label :photo
+    = f.text_field :photo
+  .field
+    = f.label :photo_big
+    = f.text_field :photo_big
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :link
+    = f.text_field :link
+  .field
+    = f.label :slogan
+    = f.text_field :slogan
+  .actions
+    = f.submit 'Save'

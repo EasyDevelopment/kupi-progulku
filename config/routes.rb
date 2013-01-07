@@ -1,4 +1,7 @@
 KupiProgulku::Application.routes.draw do
+  resources :lots
+
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Pid:
+  = @lot.pid
+%p
+  %b Photo:
+  = @lot.photo
+%p
+  %b Photo big:
+  = @lot.photo_big
+%p
+  %b Name:
+  = @lot.name
+%p
+  %b Link:
+  = @lot.link
+%p
+  %b Slogan:
+  = @lot.slogan
+
+= link_to 'Edit', edit_lot_path(@lot)
+\|
+= link_to 'Back', lots_path
