@@ -1,30 +1,7 @@
-%p#notice= notice
-
-%p
-  %b Male:
-  = @lot.male
-%p
-  %b Name:
-  = @lot.name
-%p
-  %b Link:
-  = @lot.link
-%p
-  %b Slogan:
-  = @lot.slogan
-%p
-  %b Pid:
-  = @lot.pid
-%p
-  %b Photo:
-  = @lot.photo
-%p
-  %b Photo big:
-  = @lot.photo_big
-%p
-  %b Stage:
-  = @lot.stage
-
-= link_to 'Edit', edit_lot_path(@lot)
-\|
-= link_to 'Back', lots_path
+.lot
+  %h1
+    = @lot.name
+    = link_to_vk @lot
+  = image_tag @lot.photo_big
+  %h2= @lot.slogan
+  = link_to 'К списку лотов', (@lot.male? ? men_path : women_path )

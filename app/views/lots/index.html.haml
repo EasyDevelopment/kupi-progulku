@@ -1,5 +1,6 @@
-- @lots.each do |lot|
-  .lot
-    .photo= image_tag lot.photo, alt: lot.name
-    .link= link_to_vk lot
-    .slogan= lot.slogan
+.lots
+  - @lots.each do |lot|
+    .lot
+      .photo= link_to image_tag(lot.photo, alt: lot.name), lot
+      .link= link_to lot.name, lot
+      .slogan= lot.slogan
