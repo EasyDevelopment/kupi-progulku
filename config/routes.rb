@@ -8,9 +8,8 @@ KupiProgulku::Application.routes.draw do
 
   root to: "pages#main"
 
-  get "pages/men"
-
-  get "pages/women"
+  match 'men' => "pages#men", as: :men
+  match 'women' => "pages#women", as: :women
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

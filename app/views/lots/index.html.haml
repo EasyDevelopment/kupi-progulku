@@ -1,29 +1,5 @@
-%h1 Listing lots
-
-%table
-  %tr
-    %th Pid
-    %th Photo
-    %th Photo big
-    %th Name
-    %th Link
-    %th Slogan
-    %th
-    %th
-    %th
-
-  - @lots.each do |lot|
-    %tr
-      %td= lot.pid
-      %td= lot.photo
-      %td= lot.photo_big
-      %td= lot.name
-      %td= lot.link
-      %td= lot.slogan
-      %td= link_to 'Show', lot
-      %td= link_to 'Edit', edit_lot_path(lot)
-      %td= link_to 'Destroy', lot, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Lot', new_lot_path
+- @lots.each do |lot|
+  .lot
+    .photo= image_tag lot.photo, alt: lot.name
+    .link= link_to_vk lot
+    .slogan= lot.slogan

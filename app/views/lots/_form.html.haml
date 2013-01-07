@@ -7,14 +7,8 @@
           %li= msg
 
   .field
-    = f.label :pid
-    = f.text_field :pid
-  .field
-    = f.label :photo
-    = f.text_field :photo
-  .field
-    = f.label :photo_big
-    = f.text_field :photo_big
+    = f.label :male
+    = f.check_box :male
   .field
     = f.label :name
     = f.text_field :name
@@ -24,5 +18,17 @@
   .field
     = f.label :slogan
     = f.text_field :slogan
+  .field
+    = f.label :pid
+    = f.text_field :pid
+  .field
+    = f.label :photo
+    = f.text_field :photo
+  .field
+    = f.label :photo_big
+    = f.text_field :photo_big
+  .field
+    = f.label :stage
+    = f.text_field :stage
   .actions
     = f.submit 'Save'

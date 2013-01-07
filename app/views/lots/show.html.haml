@@ -1,14 +1,8 @@
 %p#notice= notice
 
 %p
-  %b Pid:
-  = @lot.pid
-%p
-  %b Photo:
-  = @lot.photo
-%p
-  %b Photo big:
-  = @lot.photo_big
+  %b Male:
+  = @lot.male
 %p
   %b Name:
   = @lot.name
@@ -18,6 +12,18 @@
 %p
   %b Slogan:
   = @lot.slogan
+%p
+  %b Pid:
+  = @lot.pid
+%p
+  %b Photo:
+  = @lot.photo
+%p
+  %b Photo big:
+  = @lot.photo_big
+%p
+  %b Stage:
+  = @lot.stage
 
 = link_to 'Edit', edit_lot_path(@lot)
 \|

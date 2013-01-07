@@ -3,12 +3,10 @@ class PagesController < ApplicationController
   end
 
   def men
-    @stage = Stage.last
-    aid = @stage.men_album
-    @vk = VkontakteApi::Client.new
-    @photos = @vk.photos.get gid: '20651541', aid: aid
+    @lots = Lot.where male: true
   end
 
   def women
+    @lots = Lot.where male: false
   end
 end
