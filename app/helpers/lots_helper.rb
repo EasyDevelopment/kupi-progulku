@@ -7,7 +7,7 @@ module LotsHelper
       names.each_with_index do |name, i|
         link_tos << link_to(image_tag("vk20.png", title: name), links[i], target: '_blank')
       end
-      raw link_tos.join('<br>')
+      raw link_tos.join(' ')
     else
       link_to image_tag("vk20.png", title: lot.name), lot.link, target: '_blank'
     end
