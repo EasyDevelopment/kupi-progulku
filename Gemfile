@@ -8,6 +8,10 @@ gem 'rails', '3.2.10'
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+
+gem 'vkontakte_api', '~> 1.1'
+
 gem 'haml-rails'
 
 # Gems used only for assets and not required
