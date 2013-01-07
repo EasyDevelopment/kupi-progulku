@@ -2,6 +2,11 @@
   %h1
     = @lot.name
     = link_to_vk @lot
+  = link_to @lot.prev, class: 'arrow' do
+    %i.icon-chevron-left
   = image_tag @lot.photo_big
+  = link_to @lot.next, class: 'arrow' do
+    %i.icon-chevron-right
   %h2= @lot.slogan
   = link_to 'К списку лотов', (@lot.male? ? men_path : women_path )
+
