@@ -9,6 +9,7 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem 'activeadmin'
 
 gem 'vkontakte_api', '~> 1.1'
 
