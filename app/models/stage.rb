@@ -11,5 +11,7 @@
 #
 
 class Stage < ActiveRecord::Base
+  has_many :lots
+
   attr_accessible :men_album, :name, :women_album
 end

@@ -8,5 +8,8 @@
   = link_to @lot.next, class: 'arrow' do
     %i.icon-chevron-right
   %h2= @lot.slogan
+
+  = render "bets/form"
+
   = link_to 'К списку лотов', (@lot.male? ? men_path : women_path )
 
