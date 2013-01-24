@@ -2,13 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
-gem 'annotate'
 gem 'activeadmin'
 
 gem 'strong_parameters'
@@ -28,7 +24,7 @@ gem 'client_side_validations-formtastic'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem "twitter-bootstrap-rails"
+  gem 'twitter-bootstrap-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -52,3 +48,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :development do
+  gem 'annotate'
+end
