@@ -32,4 +32,12 @@ class Lot < ActiveRecord::Base
     lot = lots.where("id < ?", id).last
     lot.present? ? lot : lots.last
   end
+
+  def current_bet
+    bets.last
+  end
+
+  def prev_bets
+    Bet.where(lot_id: self.id).order('created_at desc').offset(1).limit(4)
+  end
 end

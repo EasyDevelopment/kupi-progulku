@@ -1,8 +1,8 @@
 KupiProgulku::Application.routes.draw do
-  resources :bets
 
-
-  resources :lots
+  resources :lots do
+    resources :bets
+  end
 
 
   ActiveAdmin.routes(self)

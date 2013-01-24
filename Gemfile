@@ -8,21 +8,28 @@ gem 'rails', '3.2.11'
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
-gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem 'annotate'
 gem 'activeadmin'
 
+gem 'strong_parameters'
+
 gem 'vkontakte_api', '~> 1.1'
+gem 'russian'
 
 gem 'haml-rails'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
+
+gem 'client_side_validations'
+gem 'client_side_validations-formtastic'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass-rails'
+  gem "twitter-bootstrap-rails"
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

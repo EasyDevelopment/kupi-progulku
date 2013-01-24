@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require rails.validations
+//= require rails.validations.formtastic
 //= require_tree .
+
+$(document).ready(function () {
+  $(".alert").delay(5000).fadeOut();
+});
