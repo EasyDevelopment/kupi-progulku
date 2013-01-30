@@ -1,5 +1,7 @@
 KupiProgulku::Application.routes.draw do
 
+  get "omniauth_callbacks/vkontakte"
+
   devise_for :users
 
   resources :users
