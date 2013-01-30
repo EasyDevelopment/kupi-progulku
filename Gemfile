@@ -19,6 +19,9 @@ gem 'formtastic-bootstrap'
 gem 'client_side_validations'
 gem 'client_side_validations-formtastic'
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
