@@ -1,8 +1,11 @@
 KupiProgulku::Application.routes.draw do
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  resources :users, :only => [:index, :destroy]
+
   get "omniauth_callbacks/vkontakte"
 
-  devise_for :users
+  #devise_for :users
 
   resources :users
 
