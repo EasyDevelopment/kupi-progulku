@@ -17,7 +17,7 @@
 
 class Lot < ActiveRecord::Base
   belongs_to :stage
-  has_many :bets
+  has_many :bets, dependent: :destroy
 
   attr_accessible :link, :male, :name, :photo, :photo_big, :pid, :slogan, :stage_id
 
