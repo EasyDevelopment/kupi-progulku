@@ -34,21 +34,21 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
 group :development do
   gem 'annotate'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'letter_opener'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+end
+
+group :test do
+  gem 'minitest-matchers'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
