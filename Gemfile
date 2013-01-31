@@ -42,6 +42,7 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'letter_opener'
+  gem 'localtunnel'
 end
 
 group :development, :test do
