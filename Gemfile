@@ -54,4 +54,5 @@ gem 'jquery-rails'
 
 group :development do
   gem 'annotate'
+  gem 'localtunnel'
 end
