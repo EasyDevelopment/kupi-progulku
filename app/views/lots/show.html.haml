@@ -19,15 +19,12 @@
       %i.icon-chevron-right
  
   .comments
-    %h2 Comments
+    %h2.text-info Коментарии:
     = render @lot.comments
 
     %h2 Add a comment:
     = render 'comments/form'
-    / %ul
-    /   -if @lot.current_comment.present?
-    /     .current= render partial: 'comments/comment', object: @lot.current_comment
-    /     = render partial: 'comments/comment', collection: @lot.prev_comments
+    
 
 
   = link_to 'К списку лотов', (@lot.male? ? men_path : women_path )
