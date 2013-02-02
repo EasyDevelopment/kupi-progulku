@@ -39,10 +39,10 @@
           .span9
             = yield
           .span3
-            .well.sidebar-nav
-              %h3 Авторизация
-              %ul.nav.nav-list
-                - if !user_signed_in?
+            -unless user_signed_in?
+              .well.sidebar-nav
+                %h3 Авторизация
+                %ul.nav.nav-list
                   %li= link_to "Sign in with Vkontakte", user_omniauth_authorize_path(:vkontakte)
     
       %footer
