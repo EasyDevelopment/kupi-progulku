@@ -16,5 +16,30 @@
     = link_to @lot.next, class: 'arrow' do
       %i.icon-chevron-right
 
+.comments  
+
+  %h2 Comments
+  - @lot.comments.each do |comment|
+    %p
+      %strong Commenter:
+      = comment.commenter
+    %p
+      %strong Comment:
+      = comment.body
+
+  %h2 Добавить коммент:
+  = form_for([@lot, @lot.comments.build]) do |f|
+    %p
+      = f.label :commenter
+      %br/
+      = f.text_field :commenter
+    %p
+      = f.label :body
+      %br/
+      = f.text_area :body
+    %p
+      = f.submit
+
+
   = link_to 'К списку лотов', (@lot.male? ? men_path : women_path )
 

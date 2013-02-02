@@ -17,7 +17,7 @@
 
 class Lot < ActiveRecord::Base
   belongs_to :stage
-  has_many :bets
+  has_many :comments, :bets, dependent: :destroy
 
   attr_accessible :link, :male, :name, :photo, :photo_big, :pid, :slogan, :stage_id
 
@@ -41,3 +41,5 @@ class Lot < ActiveRecord::Base
     Bet.where(lot_id: self.id).order('created_at desc').offset(1).limit(4)
   end
 end
+
+
