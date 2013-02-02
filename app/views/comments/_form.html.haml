@@ -1,4 +1,4 @@
-= semantic_form_for [@lot, @bet] do |f|
-  = f.input :value, label: false
-  = f.input :lot_id, value: @lot.id, as: :hidden
-  = f.action :submit, label: 'Сделать ставку'
+= semantic_form_for [@lot, @comment] do |f|
+    = f.input :commenter
+    = f.input :body, :as => :text_area
+    = f.action :submit, :as => :button, label: 'Опубликовать комментарий'

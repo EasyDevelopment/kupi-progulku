@@ -1,5 +1,6 @@
-%li
-  = %w(Антон Володя Настя Пётр Анрей Зульфия Герасим).shuffle.first
-  сделал ставку
-  = number_to_currency bet.value, precision: 0
-  .time= Russian::strftime bet.created_at, '%d %B %Y года в %H:%M'
+%p
+  %strong Commenter:
+  = comment.commenter
+%p
+  %strong Comment:
+  = comment.body
