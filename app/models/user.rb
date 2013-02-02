@@ -7,13 +7,13 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :email, :gender, :middlename, :name, :nickname, :phonenumber, :provider, :slogan, :surname, :urlphoto, :urlprofile, :username
+  attr_accessible :email, :url, :gender, :middlename, :name, :nickname, :phonenumber, :provider, :slogan, :surname, :urlphoto, :urlprofile, :username
 
   def self.find_for_vkontakte_oauth access_token
-    if user = User.where(:url => access_token.info.urls.Vkontakte).first
-      user
+    if @user = User.where(:url => access_token.info.urls.Vkontakte).first
+      @user
     else 
-      User.create!(:provider => access_token.provider, :url => access_token.info.urls.Vkontakte, :username => access_token.info.name, :nickname => access_token.extra.raw_info.domain, :email => access_token.extra.raw_info.domain+'<hh user=vk>.com', :password => Devise.friendly_token[0,20]) 
+      User.create!(:provider => access_token.provider, :url => access_token.info.urls.Vkontakte, :username => access_token.info.name, :nickname => access_token.extra.raw_info.domain, :email => access_token.extra.raw_info.domain.to_s + (0...50).map{ ('a'..'z').to_a[rand(26)] }.join + '@vk.com', :password => Devise.friendly_token[0,20]) 
     end
   end
 end
