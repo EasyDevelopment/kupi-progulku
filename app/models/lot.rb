@@ -18,7 +18,7 @@
 class Lot < ActiveRecord::Base
   belongs_to :stage
   has_many :bets, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
   
 
 
