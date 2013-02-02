@@ -1,9 +1,18 @@
 class CommentsController < ApplicationController
 
-def cerate
-  @lot = Lot.find(params[:id])
-  @comment = @lot.comments.create(params[:comment])
-  redirect_to lot_path(@lot)
-end
+  def create
+    @comment = Comment.new(comment_params)
+    
+      if @comment.save
+        redirect_to @comment.lot, notice: 'Комментарий при'
+      else
+        redirect_to @comment.lot, alert: @comment.errors.messages.values.join(', ')
+      end
+  end
+
+private
+  def comment_params
+    params.require(:comment).permit(:lot_id)
+  end
 
 end

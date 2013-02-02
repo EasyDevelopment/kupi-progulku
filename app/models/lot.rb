@@ -17,7 +17,10 @@
 
 class Lot < ActiveRecord::Base
   belongs_to :stage
-  has_many :comments, :bets, dependent: :destroy
+  has_many :bets, dependent: :destroy
+  has_many :comments
+  
+
 
   attr_accessible :link, :male, :name, :photo, :photo_big, :pid, :slogan, :stage_id
 
