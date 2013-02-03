@@ -3,8 +3,6 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :gender
       t.string :username
-      t.string :nickname
-      t.string :provider
       t.string :surname
       t.string :name
       t.string :middlename

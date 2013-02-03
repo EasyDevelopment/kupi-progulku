@@ -1,46 +1,21 @@
-= form_for @user do |f|
+= semantic_form_for @user do |f|
   - if @user.errors.any?
     #error_explanation
       %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :gender
-    = f.text_field :gender
-  .field
-    = f.label :username
-    = f.text_field :username
-  .field
-    = f.label :nickname
-    = f.text_field :nickname
-  .field
-    = f.label :provider
-    = f.text_field :provider
-  .field
-    = f.label :surname
-    = f.text_field :surname
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :middlename
-    = f.text_field :middlename
-  .field
-    = f.label :phonenumber
-    = f.number_field :phonenumber
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :urlprofile
-    = f.text_field :url
-  .field
-    = f.label :urlphoto
-    = f.text_field :urlphoto
-  .field
-    = f.label :slogan
-    = f.text_field :slogan
-  .actions
-    = f.submit 'Save'
+  = f.inputs do
+    - hint = "для организаторов, данные не публикуются"
+    = f.input :username,    label: 'Имя на сайте'
+    = f.input :name,        label: 'Ваше имя',           :hint => hint
+    = f.input :surname,     label: 'Ваша фамилия',       :hint => hint
+    = f.input :middlename,  label: 'Ваше отчество',      :hint => hint
+    = f.input :phonenumber, label: 'Контактный телефон', :hint => hint, :as => :string
+    = f.input :email,       label: 'Ваш имейл',          :hint => 'для уведомлений'
+    = f.input :urlphoto,    label: 'Ваше фото'
+    = f.input :url,         label: 'Ваш профайл вконтакте'
+    = f.input :slogan,      label: 'Ваш девиз'
+    = f.input :password,    :include_blank => false
+    = f.select :gender, [["Male", false], ["Female", true]], label: 'Ваш пол'
+  = f.action :submit, :as => 'button', label: 'Опубликовать комментарий'
