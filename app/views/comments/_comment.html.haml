@@ -8,3 +8,6 @@
 %p
   %strong Comment:
   = comment.body
+
+%p
+  = link_to 'Удалить коментарий', [comment.lot, comment], :confirm => 'Are you sure?', :method => :delete

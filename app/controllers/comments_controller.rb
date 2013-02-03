@@ -14,6 +14,13 @@ class CommentsController < InheritedResources::Base
     # end
   end
 
+  def destroy
+    @lot = Lot.find(params[:lot_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy 
+    redirect_to lot_path(@lot.id)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:body, :commenter, :lot_id)
