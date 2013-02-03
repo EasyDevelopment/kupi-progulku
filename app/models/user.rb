@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :email, :url, :gender, :middlename, :name, :phonenumber, :slogan, :surname, :urlphoto, :username
+  attr_accessible :email, :url, :uid, :gender, :middlename, :name, :phonenumber, :slogan, :surname, :urlphoto, :username
 
   def self.find_for_vkontakte_oauth access_token
-    @user = User.where(:url => access_token.info.urls.Vkontakte).first
+    @user = User.where(:uid => access_token.info.urls.uid).first
   end
 end

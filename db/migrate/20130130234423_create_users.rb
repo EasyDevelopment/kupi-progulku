@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :url
       t.string :urlphoto
       t.string :slogan
+      t.integer :uid
 
       t.timestamps
     end
