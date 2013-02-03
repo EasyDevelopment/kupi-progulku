@@ -81,15 +81,14 @@ ActiveRecord::Schema.define(:version => 20130130234924) do
   create_table "users", :force => true do |t|
     t.string   "gender"
     t.string   "username"
-    t.string   "nickname"
-    t.string   "provider"
     t.string   "surname"
     t.string   "name"
     t.string   "middlename"
     t.integer  "phonenumber"
-    t.string   "urlprofile"
+    t.string   "url"
     t.string   "urlphoto"
     t.string   "slogan"
+    t.integer  "uid"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
