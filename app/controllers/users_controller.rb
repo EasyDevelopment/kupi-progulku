@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 		  end
     end
   end
-
+#access_token.info.urls.uid
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
@@ -66,6 +66,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:email, :gender, :middlename, :name, :phonenumber, :slogan, :surname, :urlphoto, :url, :username, :password)
+      params.require(:user).permit(:email, :gender, :uid, :middlename, :name, :phonenumber, :slogan, :surname, :urlphoto, :url, :username, :password)
     end
 end
