@@ -1,8 +1,7 @@
 KupiProgulku::Application.routes.draw do
 
   resources :lots do
-    resources :comments
-    resources :bets
+    resources :comments, :bets
   end
 
 

@@ -1,16 +1,12 @@
-class CommentsController < ApplicationController
+class CommentsController < InheritedResources::Base
+  include ActiveModel::MassAssignmentSecurity
+  attr_accessible :body, :commenter, :lot_id
 
   def create
-    @comment = Comment.new(comment_params)
-    
-
-    # redirect_to :controller => :lots, :action => :show, :id => @lot.id
-
-
+    @comment = Comment.new(comment_params)   
     @comment.save
+
     redirect_to @comment.lot
-
-
     # if @comment.save
     #   redirect_to @comment.lot, notice: 'Комментарий принят'
     # else
@@ -20,7 +16,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:lot_id)
+    params.require(:comment).permit(:body, :commenter, :lot_id)
   end
 
 end

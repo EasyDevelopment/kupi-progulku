@@ -19,7 +19,7 @@ class Lot < ActiveRecord::Base
   belongs_to :stage
   has_many :bets, dependent: :destroy
   has_many :comments, dependent: :destroy
-
+  # accepts_nested_attributes_for :comments
 
   attr_accessible :link, :male, :name, :photo, :photo_big, :pid, :slogan, :stage_id
 
