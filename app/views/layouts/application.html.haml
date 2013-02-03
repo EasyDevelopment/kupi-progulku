@@ -17,8 +17,6 @@
 
   %body
   .container
-    = bootstrap_flash
-
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -26,7 +24,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="/") Купи Прогулку
+          %a.brand(href=root_path) Купи Прогулку
 
           .container.nav-collapse
             %ul.nav
@@ -41,7 +39,7 @@
             = yield
           .span3
             -unless user_signed_in?
-              %li= link_to image_tag('images.jpg'), user_omniauth_authorize_path(:vkontakte)
+              %p= link_to image_tag('vkontakte-logo.png'), user_omniauth_authorize_path(:vkontakte)
     
       %footer
         %p © Company 2012

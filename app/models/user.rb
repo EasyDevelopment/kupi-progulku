@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :url, :uid, :gender, :middlename, :name, :phonenumber, :slogan, :surname, :urlphoto, :username
 
   def self.find_for_vkontakte_oauth access_token
-    @user = User.where(:uid => access_token.info.urls.uid).first
+    @user = User.where(:uid => access_token.uid).first
   end
 end
