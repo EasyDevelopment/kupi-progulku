@@ -15,6 +15,12 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+config = YAML.load(File.read(File.expand_path('../omniauth.yml', __FILE__)))
+config.merge! config.fetch(Rails.env, {})
+config.each do |key, value|
+  ENV[key] = value unless value.kind_of? Hash
+end
+
 module KupiProgulku
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
