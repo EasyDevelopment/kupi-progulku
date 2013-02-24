@@ -1,0 +1,12 @@
+= semantic_form_for @profile do |f|
+  = f.inputs do
+    = f.input :male, as: :radio, collection: [['Мужчина', true], ['Женщина', false]]
+    = f.input :nickname
+    .for_organizers
+      .full_name
+        = f.input :last_name
+        = f.input :first_name
+        = f.input :middle_name
+      = f.input :phone
+    = f.input :email, hint: 'Для уведомлений'
+  = f.actions

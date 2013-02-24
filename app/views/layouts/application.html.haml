@@ -8,11 +8,15 @@
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
-        - if current_user
-          Signed in as #{current_user.uid}!
-          \#{link_to "Sign out", sign_out_path}
-        - else
-          = link_to (image_tag('vk20.png')+'ойти'), '/auth/vkontakte'
+        .container
+          = link_to 'Купи Прогулку', root_path, class: 'brand'
+          .pull-right
+            - if current_user
+              = image_tag current_user.profile.photo_url
+              = current_user.profile.nickname
+              = link_to 'Выйти', sign_out_path
+            - else
+              = link_to 'Войти через вКонтакте', '/auth/vkontakte'
     .container
       = bootstrap_flash
       = yield
